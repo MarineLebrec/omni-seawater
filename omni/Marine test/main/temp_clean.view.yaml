@@ -1,0 +1,38 @@
+# Reference this view as main__temp_clean
+schema: main
+table_name: temp_clean
+
+dimensions:
+  rn: {}
+
+  time:
+    label: Temperature Measurement Time
+    description: Timestamp when the temperature measurement was recorded
+
+  sea_water_temperature:
+    sql: CAST(sea_water_temperature AS DOUBLE)
+    label: Sea Water Temperature
+    description: Sea water temperature measured in degrees Celsius
+
+  rounded_temperature:
+    sql: ROUND(${main__temp_clean.sea_water_temperature}, 1)
+    label: Rounded Temperature
+
+measures:
+  count:
+    aggregate_type: count
+
+  sea_water_temperature_average:
+    sql: ${main__temp_clean.sea_water_temperature}
+    label: Average Sea Water Temperature
+    description: Average sea water temperature in degrees Celsius
+    aggregate_type: average
+
+  doubled_temperature:
+    sql: COALESCE(${main__temp_clean.sea_water_temperature_max}, 0) * 2
+    label: Doubled temperature
+
+  rounded_temperature_average:
+    sql: ${main__temp_clean.rounded_temperature}
+    label: Rounded Temperature Average
+    aggregate_type: average

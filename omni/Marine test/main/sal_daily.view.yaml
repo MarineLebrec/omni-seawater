@@ -1,0 +1,18 @@
+# Reference this view as main__sal_daily
+schema: main
+table_name: sal_daily
+
+dimensions:
+  date: {}
+
+  avg_salinity:
+    sql: avg_salinity
+    label: Daily Mean Salinity
+
+measures:
+  count:
+    aggregate_type: count
+
+  avg_salinity_min:
+    sql: ${main__sal_daily.avg_salinity}
+    aggregate_type: min

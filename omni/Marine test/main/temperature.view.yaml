@@ -1,0 +1,15 @@
+# Reference this view as main__temperature
+schema: main
+table_name: temperature
+
+dimensions:
+  time: {}
+  sea_water_temperature: {}
+
+measures:
+  count:
+    aggregate_type: count
+
+  average:
+    sql: CAST(${sea_water_temperature} AS DOUBLE)
+    aggregate_type: average

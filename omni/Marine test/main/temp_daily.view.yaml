@@ -1,0 +1,14 @@
+# Reference this view as main__temp_daily
+schema: main
+table_name: temp_daily
+
+dimensions:
+  date: {}
+
+  avg_temperature:
+    sql: avg_temperature
+    label: Daily Mean Temperature
+
+measures:
+  count:
+    aggregate_type: count

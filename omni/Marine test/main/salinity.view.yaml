@@ -1,0 +1,11 @@
+# Reference this view as main__salinity
+schema: main
+table_name: salinity
+
+dimensions:
+  time: {}
+  sea_water_practical_salinity: {}
+
+measures:
+  count:
+    aggregate_type: count

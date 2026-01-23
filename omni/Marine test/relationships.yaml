@@ -1,0 +1,5 @@
+- join_from_view: main__temp_daily
+  join_to_view: main__sal_daily
+  join_type: always_left
+  on_sql: ${main__temp_daily.date[date]} = ${main__sal_daily.date[date]}
+  relationship_type: one_to_one

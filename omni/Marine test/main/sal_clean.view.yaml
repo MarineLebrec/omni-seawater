@@ -1,0 +1,12 @@
+# Reference this view as main__sal_clean
+schema: main
+table_name: sal_clean
+
+dimensions:
+  time: {}
+  sea_water_practical_salinity: {}
+  rn: {}
+
+measures:
+  count:
+    aggregate_type: count

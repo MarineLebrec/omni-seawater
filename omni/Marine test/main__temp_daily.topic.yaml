@@ -1,0 +1,5 @@
+base_view: main__temp_daily
+label: MLML Shore Station
+
+joins:
+  main__sal_daily: {}
