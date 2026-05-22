@@ -5,3 +5,5 @@ fields: [ sea_water_temperature ]
 
 joins:
   main__sal_clean: {}
+
+ai_context: test
