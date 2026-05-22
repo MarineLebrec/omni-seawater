@@ -1,7 +1,7 @@
 base_view: main__temp_clean
 label: Main Temp Clean
 
-fields: [ all_views.*, -main__sal_clean.rn, -main__temp_clean.rn ]
+fields: [ sea_water_temperature ]
 
 joins:
   main__sal_clean: {}
