@@ -18,6 +18,10 @@ dimensions:
     sql: ROUND(${main__temp_clean.sea_water_temperature}, 1)
     label: Rounded Temperature
 
+  temperature_halved:
+    sql: ${main__temp_clean.sea_water_temperature} / 2
+    label: Temperature halved
+
 measures:
   count:
     aggregate_type: count
@@ -36,3 +40,11 @@ measures:
     sql: ${main__temp_clean.rounded_temperature}
     label: Rounded Temperature Average
     aggregate_type: average
+
+  sea_water_temperature_max:
+    sql: ${main__temp_clean.sea_water_temperature}
+    aggregate_type: max
+
+  sea_water_temperature_min:
+    sql: ${main__temp_clean.sea_water_temperature}
+    aggregate_type: min

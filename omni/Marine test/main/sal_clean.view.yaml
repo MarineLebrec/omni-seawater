@@ -3,10 +3,22 @@ schema: main
 table_name: sal_clean
 
 dimensions:
-  time: {}
-  sea_water_practical_salinity: {}
   rn: {}
+
+  time:
+    label: Salinity Measurement Time
+    description: Timestamp when the salinity measurement was recorded
+
+  sea_water_practical_salinity:
+    label: Sea Water Practical Salinity
+    description: Practical salinity of sea water measured in PSU (Practical Salinity Units)
 
 measures:
   count:
     aggregate_type: count
+
+  sea_water_practical_salinity_average:
+    sql: ${main__sal_clean.sea_water_practical_salinity}
+    label: Average Sea Water Salinity
+    description: Average practical salinity of sea water in PSU
+    aggregate_type: average
