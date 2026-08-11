@@ -1,5 +1,9 @@
 base_view: main__temp_daily
 label: MLML Shore Station
 
+default_filters:
+  main__temp_daily.avg_temperature:
+    greater_than: 15
+
 joins:
   main__sal_daily: {}
