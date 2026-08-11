@@ -3,7 +3,7 @@ label: MLML Shore Station
 
 default_filters:
   main__temp_daily.avg_temperature:
-    greater_than: 15
+    greater_than: 10
 
 joins:
   main__sal_daily: {}
